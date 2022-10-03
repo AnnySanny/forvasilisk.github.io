@@ -1,24 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import { colorplate } from './data';
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+
+ let res = colorplate.map(function(item) {
+  
+    let d = item.color
+    return <tr key={item.id}>
+       <td>{item.artkl}</td>
+       <td><img   width="200" height="90"  style= {{backgroundColor: d}} /></td>
+       <td>{item.artkl}</td>
+       <td><img   width="200" height="90" style= {{backgroundColor: d }} /></td>
+       <td>{item.artkl}</td>
+       <td><img   width="200" height="90" style= {{backgroundColor: d }} /></td>
+       <td>{item.artkl}</td>
+       <td><img   width="200" height="90" style= {{backgroundColor: d }} /></td>
+        
+    </tr>;
+ });
+
+ return  (<table>
+    <thead>
+       <tr>
+          <td>Артикль</td>
+          <td>Картинка</td>
+          <td>Артикль</td>
+          <td>Картинка</td>
+          <td>Артикль</td>
+          <td>Картинка</td>
+          <td>Артикль</td>
+          <td>Картинка</td>
+       </tr>
+    </thead>
+    <tbody>
+       {res}
+    </tbody>
+    
+ </table>
   );
 }
 
